@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyTraining</string>
+    <string name="IMCApp">IMC-Calculator</string>
+    <string name="OtherApp">Otra App</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+</resources>
