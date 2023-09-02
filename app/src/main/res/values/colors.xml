@@ -8,8 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="title_text">#F0CDC9C9</color>
-    <color name="background_component">#1B1C2C</color>
-    <color name="background_component_select">#131423</color>
+    <color name="background_component">#CC1B1C32</color>
+    <color name="background_component_select">#0A0B19</color>
+    <color name="background_button">@color/purple_500</color>
+    <color name="background_button_select">@color/purple_700</color>
+
 
 </resources>
 
