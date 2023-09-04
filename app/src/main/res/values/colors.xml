@@ -14,5 +14,10 @@
     <color name="background_button_select">@color/purple_700</color>
 
 
+    <color name="healthy">#004D40</color>
+    <color name="moderate">#00E676</color>
+    <color name="severe">#FF7043</color>
+    <color name="very_severe">#BF360C</color>
+
 </resources>
 
