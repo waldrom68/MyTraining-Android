@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.rome.tech.mytraining.IMCapp.IMCActivity
+import com.rome.tech.mytraining.IMCapp.ImcMainActivity
 
 class MenuActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun navigateToIMCApp() {
-        var intent = Intent(this, IMCActivity::class.java)
+        var intent = Intent(this, ImcMainActivity::class.java)
         startActivity(intent)
     }
 
