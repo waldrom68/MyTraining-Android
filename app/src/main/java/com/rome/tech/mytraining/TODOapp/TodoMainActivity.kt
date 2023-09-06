@@ -1,4 +1,4 @@
-package com.rome.tech.mytraining.todo_app
+package com.rome.tech.mytraining.TODOapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
