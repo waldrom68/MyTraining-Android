@@ -17,6 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0"/>
+
+    <Button
+        android:id="@+id/btnTODO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TODOApp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIMCApp"
+        app:layout_constraintVertical_bias="0"/>
+
     <Button
         android:id="@+id/btnOther"
         android:layout_width="match_parent"
@@ -25,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIMCApp"
+        app:layout_constraintTop_toBottomOf="@+id/btnTODO"
         app:layout_constraintVertical_bias="0"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

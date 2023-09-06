@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MyTraining</string>
-    <string name="IMCApp">IMC-Calculator</string>
+    <string name="IMCApp">IMC-Calculator APP</string>
     <string name="OtherApp">Otra App</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
@@ -29,6 +29,7 @@
     <string name="very_severe_obesity">Obesidad muy severa</string>
 
     <string name="_ErrorIMC">Hubo un error en el cálculo</string>
+    <string name="TODOApp">TODO app</string>
 
 
 </resources>
