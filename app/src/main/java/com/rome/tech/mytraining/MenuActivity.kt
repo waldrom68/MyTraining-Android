@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.rome.tech.mytraining.IMCapp.ImcMainActivity
-import com.rome.tech.mytraining.TODOapp.TodoMainActivity
+import com.rome.tech.mytraining.todo_app.TodoMainActivity
 
 class MenuActivity : AppCompatActivity() {
 

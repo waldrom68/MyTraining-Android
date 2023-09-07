@@ -12,12 +12,28 @@
     <color name="background_component_select">#0A0B19</color>
     <color name="background_button">@color/purple_500</color>
     <color name="background_button_select">@color/purple_700</color>
+    <color name="_error">#BF360C</color>
 
-
+<!--IMC_APP-->
     <color name="healthy">#004D40</color>
     <color name="moderate">#00E676</color>
     <color name="severe">#FF7043</color>
     <color name="very_severe">#BF360C</color>
+
+
+<!--TODO_APP-->
+    <!--El estilo se cambia en archivo res/themes-->
+    <color name="todo_background_app">#FF204993</color>
+    <color name="todo_background_card">#FF081A4A</color>
+    <color name="todo_background_card_disable">#787878</color>
+    <color name="todo_background_component_select">#FF204993</color>
+    <color name="todo_subtitle_text">#959595</color>
+    <color name="todo_accent">#E91E63</color>
+
+    <color name="todo_business_category">#FF9800</color>
+    <color name="todo_personal_category">#00BCD4</color>
+    <color name="todo_other_category">#4CAF50</color>
+
 
 </resources>
 
