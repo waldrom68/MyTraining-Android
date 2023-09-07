@@ -28,7 +28,6 @@ class MenuActivity : AppCompatActivity() {
     private fun initElements() {
         btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
         btnTodoApp =  findViewById<Button>(R.id.btnTODO)
-
         btnOtherApp = findViewById<Button>(R.id.btnOther)
 
     }
@@ -36,11 +35,9 @@ class MenuActivity : AppCompatActivity() {
     private fun initListeners() {
         btnIMCApp.setOnClickListener { navigateToIMCApp() }
         btnTodoApp.setOnClickListener { navigateToTODOApp() }
-
         btnOtherApp.setOnClickListener { Log.i("wal", "Click en btnOtherApp") }
 
     }
-
 
 
 //    private fun initUI() {

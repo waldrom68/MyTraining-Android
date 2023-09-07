@@ -10,9 +10,12 @@ import com.rome.tech.mytraining.todo_app.model.TaskCategory
 
 
 class TodoMainActivity : AppCompatActivity() {
+    //    TODO esta info es la que se debe recibir para armar la lista
+//    por ahora es fija
     private val categories = listOf(
-        TaskCategory.Personal,
         TaskCategory.Business,
+        TaskCategory.Personal,
+        TaskCategory.Domestic,
         TaskCategory.Other
 
     )
