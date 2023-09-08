@@ -22,7 +22,11 @@ class TodoMainActivity : AppCompatActivity() {
     )
 
     private val tasks = mutableListOf<Task>(
-        Task("Preparar mates", TaskCategory.Domestic, false)
+        Task("Preparar mates", TaskCategory.Domestic, false),
+        Task("Buscar a Xime", TaskCategory.Domestic, false),
+        Task("Analisis", TaskCategory.Personal, false),
+        Task("Souvenires", TaskCategory.Personal, false),
+        Task("Comprar remedios", TaskCategory.Domestic, false),
     )
 
     private lateinit var rvCategories: RecyclerView

@@ -61,4 +61,5 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
 
     }
+
 }
