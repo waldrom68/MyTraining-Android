@@ -7,4 +7,6 @@ sealed class TaskCategory {
     object Other : TaskCategory()
     object Domestic : TaskCategory()
 
+
+
 }

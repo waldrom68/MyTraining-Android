@@ -14,51 +14,48 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private var divider: View = view.findViewById(R.id.divider)
 
     fun render(taskCategory: TaskCategory) {
-        tvCategoryName.text = "EJEMPLO"
 
+        // TODO refactoring HardCode referenciado a res/string
+        val categoryName: String
+        val categoryColorId: Int
         when (taskCategory) {
             TaskCategory.Business -> {
-                tvCategoryName.text = "Negocios"
-                // El contexto que debo usar es el del divider que está en el layout
-                // this no lo tiene.
-                divider.setBackgroundColor(
-                    ContextCompat.getColor(
-                        divider.context,
-                        R.color.todo_business_category
-                    )
-                )
-            }
-            // TODO refactoring Hardcoded rules
-            TaskCategory.Other -> {
-                tvCategoryName.text = "Otros"
-                divider.setBackgroundColor(
-                    ContextCompat.getColor(
-                        divider.context,
-                        R.color.todo_other_category
-                    )
+                categoryName = "Negocios"
+                categoryColorId = ContextCompat.getColor(
+                    divider.context,
+                    R.color.todo_business_category
                 )
             }
 
             TaskCategory.Personal -> {
-                tvCategoryName.text = "Personal"
-                divider.setBackgroundColor(
-                    ContextCompat.getColor(
-                        divider.context,
-                        R.color.todo_personal_category
-                    )
+                categoryName = "Personal"
+                categoryColorId = ContextCompat.getColor(
+                    divider.context,
+                    R.color.todo_personal_category
                 )
             }
 
             TaskCategory.Domestic -> {
-                tvCategoryName.text = "Familiares"
-                divider.setBackgroundColor(
-                    ContextCompat.getColor(
-                        divider.context,
-                        R.color.todo_domestic_category
-                    )
+                categoryName = "Familiares"
+                categoryColorId = ContextCompat.getColor(
+                    divider.context,
+                    R.color.todo_domestic_category
+                )
+            }
+
+            else -> {
+                categoryName = "Otros"
+                categoryColorId = ContextCompat.getColor(
+                    divider.context,
+                    R.color.todo_other_category
                 )
             }
         }
+
+        tvCategoryName.text = categoryName
+        // El contexto que debo usar es el del divider que está en el layout
+        // this no lo tiene.
+        divider.setBackgroundColor(categoryColorId)
 
     }
 

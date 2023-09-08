@@ -107,7 +107,9 @@ class TodoMainActivity : AppCompatActivity() {
         rvCategories.adapter = categoriesAdapter
 
         // Listado de tareas
-        taskAdapter = TaskAdapter(tasks)
+        /* entre llaves paso la funcion que se ejecutara como lamda en cada item */
+        taskAdapter = TaskAdapter( tasks ) { onItemSelected(it) }
+
         rvTasks.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvTasks.adapter = taskAdapter
@@ -120,10 +122,14 @@ class TodoMainActivity : AppCompatActivity() {
         }
     }
 
+    private fun onItemSelected(position: Int) {
+        tasks[position]._isSelected = !tasks[position]._isSelected
+        updateTasks()
+    }
+
     private fun updateTasks() {
         /* TODO no es lo ideal, esto consume muchos recursos al recrear la lista completa
             debiera notificarse al adapter insercion, modificacion o eliminacion */
-
         taskAdapter.notifyDataSetChanged()
     }
 }
