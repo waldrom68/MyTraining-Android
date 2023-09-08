@@ -2,6 +2,8 @@
     <string name="app_name">MyTraining</string>
     <string name="IMCApp">IMC-Calculator APP</string>
     <string name="OtherApp">Otra App</string>
+
+    <!--IMC_APP-->
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
     <string name="height">Altura</string>
@@ -14,22 +16,21 @@
     <string name="calculate">Calcular</string>
     <string name="reCalculate">Volver a calcular</string>
     <string name="resultado_obtenido">Su resultado</string>
-
     <string name="very_severe_thinness">Delgadez muy severa</string>
     <string name="severe_thinness">Delgadez severa</string>
-
-
     <string name="thinness">Delgadez</string>
     <string name="Healthy_weight">Peso saludable</string>
     <string name="over_weight">Sobrepeso</string>
     <string name="moderate_obesity">Obesidad moderada</string>
-
-
     <string name="severe_obesity">Obesidad severa</string>
     <string name="very_severe_obesity">Obesidad muy severa</string>
 
     <string name="_ErrorIMC">Hubo un error en el cálculo</string>
-    <string name="TODOApp">TODO app</string>
 
+    <!--TODO_APP-->
+    <string name="TODOApp">TODO app</string>
+    <string name="todoTitle">Holita</string>
+    <string name="todoCategories">Categories</string>
+    <string name="todoList">Tareas</string>
 
 </resources>

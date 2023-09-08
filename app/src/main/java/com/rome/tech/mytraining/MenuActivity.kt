@@ -21,31 +21,28 @@ class MenuActivity : AppCompatActivity() {
         initElements()
         initListeners()
 
-        initUI()
+//        initUI()
 
     }
 
     private fun initElements() {
-        var btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
-        var btnTodoApp =  findViewById<Button>(R.id.btnTODO)
-
-        var btnOtherApp = findViewById<Button>(R.id.btnOther)
+        btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
+        btnTodoApp =  findViewById<Button>(R.id.btnTODO)
+        btnOtherApp = findViewById<Button>(R.id.btnOther)
 
     }
 
     private fun initListeners() {
         btnIMCApp.setOnClickListener { navigateToIMCApp() }
-        btnIMCApp.setOnClickListener { navigateToTODOApp() }
-
+        btnTodoApp.setOnClickListener { navigateToTODOApp() }
         btnOtherApp.setOnClickListener { Log.i("wal", "Click en btnOtherApp") }
 
     }
 
 
-
-    private fun initUI() {
-        TODO("Not yet implemented")
-    }
+//    private fun initUI() {
+//        TODO("Not yet implemented")
+//    }
 
     private fun navigateToIMCApp() {
         var intent = Intent(this, ImcMainActivity::class.java)
