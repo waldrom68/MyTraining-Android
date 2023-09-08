@@ -30,7 +30,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="TodoSubtitle">
+    <style name="todo_subtitle">
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">"@color/todo_subtitle_text"</item>
         <item name="android:textSize">16sp</item>

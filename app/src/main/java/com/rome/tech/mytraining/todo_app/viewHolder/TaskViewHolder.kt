@@ -13,6 +13,7 @@ class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val chkTask: CheckBox = view.findViewById(R.id.chkTask)
 
     fun render(task: Task) {
+//        TODO refactoring Hardcoded rules
         tvTask.text = task.name
 
 

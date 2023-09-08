@@ -28,7 +28,7 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                     )
                 )
             }
-
+            // TODO refactoring Hardcoded rules
             TaskCategory.Other -> {
                 tvCategoryName.text = "Otros"
                 divider.setBackgroundColor(
