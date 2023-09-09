@@ -9,7 +9,10 @@ import com.rome.tech.mytraining.todo_app.viewHolder.CategoriesViewHolder
 
 
 // Encargado de armer y mostrar la lista
-class CategoriesAdapter(private val categories: List<TaskCategory>) : RecyclerView.Adapter<
+class CategoriesAdapter(
+    private val categories: List<TaskCategory>,
+    private val onItemSelected: (Int) -> Unit,
+) : RecyclerView.Adapter<
         CategoriesViewHolder>
     () {
 
@@ -25,7 +28,8 @@ class CategoriesAdapter(private val categories: List<TaskCategory>) : RecyclerVi
 
     // Es el que le agrega los datos
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        return holder.render(categories[position])
+        // Enviamos la funcion lambda al ViewHolder
+        return holder.render(categories[position], onItemSelected)
     }
 
 }

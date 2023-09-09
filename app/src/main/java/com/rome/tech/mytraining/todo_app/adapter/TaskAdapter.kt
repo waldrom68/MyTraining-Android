@@ -2,13 +2,12 @@ package com.rome.tech.mytraining.todo_app.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import com.rome.tech.mytraining.R
 import com.rome.tech.mytraining.todo_app.model.Task
 import com.rome.tech.mytraining.todo_app.viewHolder.TaskViewHolder
 
-class TaskAdapter(private val tasks: List<Task>, private val onTaskSelected: (Int) -> Unit) :
+class TaskAdapter(var tasks: List<Task>, private val onTaskSelected: (Int) -> Unit) :
     RecyclerView.Adapter<
             TaskViewHolder>() {
 

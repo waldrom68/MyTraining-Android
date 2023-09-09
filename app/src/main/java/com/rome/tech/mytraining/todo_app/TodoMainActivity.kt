@@ -21,10 +21,7 @@ class TodoMainActivity : AppCompatActivity() {
     //    TODO refactoring Hardcoded rules
 //    por ahora es fija
     private val categories = listOf(
-        TaskCategory.Business,
-        TaskCategory.Personal,
-        TaskCategory.Domestic,
-        TaskCategory.Other
+        TaskCategory.Business, TaskCategory.Personal, TaskCategory.Domestic, TaskCategory.Other
     )
 
     private val tasks = mutableListOf<Task>(
@@ -94,32 +91,29 @@ class TodoMainActivity : AppCompatActivity() {
     private fun initComponents() {
         rvCategories = findViewById(R.id.todo_rvCategories)
         rvTasks = findViewById(R.id.todo_rvTasks)
-        fabAddTask = findViewById<FloatingActionButton>(R.id.todo_fabAddTask)
+        fabAddTask = findViewById(R.id.todo_fabAddTask)
 
     }
 
     private fun initUI() {
 
         // Listado de categorias de Tareas
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories) { position -> updateCategories(position) }
         rvCategories.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
 
         // Listado de tareas
         /* entre llaves paso la funcion que se ejecutara como lamda en cada item */
-        taskAdapter = TaskAdapter( tasks ) { onItemSelected(it) }
+        taskAdapter = TaskAdapter(tasks) { onItemSelected(it) }
 
-        rvTasks.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        rvTasks.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvTasks.adapter = taskAdapter
 
     }
 
     private fun initListeners() {
-        fabAddTask.setOnClickListener {
-            showDialog()
-        }
+        fabAddTask.setOnClickListener { showDialog() }
     }
 
     private fun onItemSelected(position: Int) {
@@ -127,9 +121,21 @@ class TodoMainActivity : AppCompatActivity() {
         updateTasks()
     }
 
+    private fun updateCategories(position: Int) {
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+
+        updateTasks()
+
+    }
+
     private fun updateTasks() {
         /* TODO no es lo ideal, esto consume muchos recursos al recrear la lista completa
             debiera notificarse al adapter insercion, modificacion o eliminacion */
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTasks = tasks.filter { selectedCategories.contains(it.category) }
+
+        taskAdapter.tasks = newTasks
         taskAdapter.notifyDataSetChanged()
     }
 }
