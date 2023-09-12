@@ -2,7 +2,7 @@
     <string name="app_name">MyTraining</string>
     <string name="IMCApp">IMC-Calculator APP</string>
     <string name="OtherApp">Otra App</string>
-    <string name="miBarra">Hola</string>
+    <string name="findBar">Buscar....</string>
     <!--IMC_APP-->
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
@@ -39,5 +39,6 @@
     <string name="todo_domestic">Familiar</string>
     <string name="todo_new_task">Nueva tarea</string>
     <string name="superherosApp">Superheroes APP</string>
+
 
 </resources>
