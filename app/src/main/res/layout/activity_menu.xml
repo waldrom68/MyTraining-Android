@@ -23,6 +23,12 @@
         android:text="@string/TODOApp" />
 
     <Button
+        android:id="@+id/btnSuperherosApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/superherosApp" />
+    <Button
         android:id="@+id/btnOther"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
