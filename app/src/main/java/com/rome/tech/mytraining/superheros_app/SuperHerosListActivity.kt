@@ -66,7 +66,9 @@ class SuperHerosListActivity : AppCompatActivity() {
 
                 if (response?.superheros != null) {
 
-                    runOnUiThread { updateSuperherosList(response.superheros) }
+                    runOnUiThread { updateSuperherosList(response.superheros)
+                        binding.progressBar.isVisible = false
+                    }
 
                 } else {
 
@@ -75,21 +77,24 @@ class SuperHerosListActivity : AppCompatActivity() {
                         updateSuperherosList(
 
                             listOf(
-                                Superhero("1",
+                                Superhero(
+                                    "1",
                                     "Sin datos",
-                                    SuperheroImageResponse(""))
+                                    SuperheroImageResponse("")
+                                )
                             )
-
                         )
+                        binding.progressBar.isVisible = false
                     }
                 }
-            }
-            else {
+            } else {
                 Log.i("SEMILLA searchByName", "error en la conexion al servidor")
+                runOnUiThread { binding.progressBar.isVisible = false }
             }
 
         }
-        binding.progressBar.isVisible = true
+
+
     }
 
 

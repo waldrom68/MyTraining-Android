@@ -23,7 +23,7 @@ class SuperherosAdapter(var superheros: List<Superhero> = emptyList()) :
 
     fun updateList(list: List<Superhero> ) {
         this.superheros = list
-        notifyDataSetChanged()
+        this.notifyDataSetChanged()
     }
 }
 

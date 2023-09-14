@@ -11,12 +11,14 @@ class SuperherosViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private var binding = ItemSuperheroBinding.bind(view)
 
     fun bind(superhero: Superhero) {
-        Log.i("ViewHolder", superhero.superheroName)
+
         binding.tvSuperheroName.text = superhero.superheroName
 
-        Picasso.get()
-            .load(superhero.SuperheroImage.superheroImgUrl)
-            .into(binding.ivSuperhero);
-
+        if (superhero.superheroImage.superheroImgUrl != "") {
+            // TODO exception control
+            Picasso.get()
+                .load(superhero.superheroImage.superheroImgUrl)
+                .into(binding.ivSuperhero)
+        }
     }
 }
