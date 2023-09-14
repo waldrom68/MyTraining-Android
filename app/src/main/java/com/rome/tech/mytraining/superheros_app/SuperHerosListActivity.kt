@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rome.tech.mytraining.databinding.ActivitySuperHerosListBinding
 import com.rome.tech.mytraining.superheros_app.adapter.SuperherosAdapter
 import com.rome.tech.mytraining.superheros_app.model.Superhero
+import com.rome.tech.mytraining.superheros_app.model.SuperheroImageResponse
 import com.rome.tech.mytraining.superheros_app.model.SuperherosResponse
 import com.rome.tech.mytraining.superheros_app.service.ApiService
 import kotlinx.coroutines.CoroutineScope
@@ -50,39 +51,47 @@ class SuperHerosListActivity : AppCompatActivity() {
         binding.rvSuperhero.layoutManager = LinearLayoutManager(this)
         binding.rvSuperhero.adapter = adapter
 
-
     }
 
     private fun searchByName(query: String) {
+        // TODO, obtengo error si el servicio devuelve un valor nulo
         binding.progressBar.isVisible = true
 
         CoroutineScope(Dispatchers.IO).launch {
             val myResponse = retrofit.create(ApiService::class.java).getSuperheros(query.trim())
 
             if (myResponse.isSuccessful) {
+
                 val response: SuperherosResponse? = myResponse.body()
-                Log.i("SEMILLA", "searchByName")
 
-                if (response != null) {
+                if (response?.superheros != null) {
+
+                    runOnUiThread { updateSuperherosList(response.superheros) }
+
+                } else {
+
                     runOnUiThread {
+                        Log.i("SEMILLA searchByName", "busqueda sin datos")
+                        updateSuperherosList(
 
-                        binding.progressBar.isVisible = false
-                        Log.i(
-                            "SEMILLA", "obtengo este listado: ${response.superheros}"
+                            listOf(
+                                Superhero("1",
+                                    "Sin datos",
+                                    SuperheroImageResponse(""))
+                            )
+
                         )
-                        updateSuperherosList(response.superheros)
                     }
                 }
-
-            } else {
-                Log.i("SERVICE API", "Respuesta vacia")
-                runOnUiThread {
-                    binding.progressBar.isVisible = false
-                }
+            }
+            else {
+                Log.i("SEMILLA searchByName", "error en la conexion al servidor")
             }
 
         }
+        binding.progressBar.isVisible = true
     }
+
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder().baseUrl("https://superheroapi.com/api/") //no olvidar ultimo slash
@@ -90,7 +99,7 @@ class SuperHerosListActivity : AppCompatActivity() {
     }
 
     private fun updateSuperherosList(list: List<Superhero>) {
-        Log.i("SEMILLA", "mando a actualizar: ${list.toString()}")
+//        Log.i("SEMILLA", "mando a actualizar: ${list.toString()}")
         adapter.updateList(list)
     }
 }

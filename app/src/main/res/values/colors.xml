@@ -35,6 +35,9 @@
     <color name="todo_domestic_category">#EEFF41</color>
     <color name="todo_other_category">#4CAF50</color>
 
+<!--Superheros_APP-->
+    <color name="superhero_item_name">#997C4DFF</color>  // with transparency
+
 
 </resources>
 
