@@ -38,7 +38,14 @@
     <string name="todo_other">Otros</string>
     <string name="todo_domestic">Familiar</string>
     <string name="todo_new_task">Nueva tarea</string>
-    <string name="superherosApp">Superheroes APP</string>
 
+    <!--SUPERHERO_APP-->
+    <string name="superherosApp">Superheroes APP</string>
+    <string name="super_intelligence">Intelligence</string>
+    <string name="super_strength">Strength</string>
+    <string name="super_speed">Speed</string>
+    <string name="super_durability">Durability</string>
+    <string name="super_power">Power</string>
+    <string name="super_combat">Combat</string>
 
 </resources>

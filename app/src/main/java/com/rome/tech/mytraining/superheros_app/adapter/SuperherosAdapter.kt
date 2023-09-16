@@ -7,7 +7,10 @@ import com.rome.tech.mytraining.R
 import com.rome.tech.mytraining.superheros_app.holder.SuperherosViewHolder
 import com.rome.tech.mytraining.superheros_app.model.Superhero
 
-class SuperherosAdapter(var superheros: List<Superhero> = emptyList()) :
+class SuperherosAdapter(
+    var superheros: List<Superhero> = emptyList(),
+    private val onItemSelected: (String) -> Unit,
+) :
     RecyclerView.Adapter<SuperherosViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperherosViewHolder {
         val view =
@@ -16,12 +19,12 @@ class SuperherosAdapter(var superheros: List<Superhero> = emptyList()) :
     }
 
     override fun onBindViewHolder(holder: SuperherosViewHolder, position: Int) {
-        holder.bind(superheros[position])
+        holder.bind(superheros[position], onItemSelected )
     }
 
     override fun getItemCount() = superheros.size
 
-    fun updateList(list: List<Superhero> ) {
+    fun updateList(list: List<Superhero>) {
         this.superheros = list
         this.notifyDataSetChanged()
     }

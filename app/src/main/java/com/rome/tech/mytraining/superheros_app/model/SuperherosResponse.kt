@@ -18,3 +18,4 @@ data class Superhero(
 class SuperheroImageResponse (
     @SerializedName("url") val superheroImgUrl: String
 )
+

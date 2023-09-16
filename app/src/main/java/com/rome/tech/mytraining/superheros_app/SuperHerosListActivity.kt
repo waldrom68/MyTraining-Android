@@ -1,5 +1,6 @@
 package com.rome.tech.mytraining.superheros_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rome.tech.mytraining.databinding.ActivitySuperHerosListBinding
+import com.rome.tech.mytraining.superheros_app.DetailSuperheroActivity.Companion.EXTRA_ID
 import com.rome.tech.mytraining.superheros_app.adapter.SuperherosAdapter
 import com.rome.tech.mytraining.superheros_app.model.Superhero
 import com.rome.tech.mytraining.superheros_app.model.SuperheroImageResponse
@@ -23,6 +25,10 @@ class SuperHerosListActivity : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
 
     private lateinit var adapter: SuperherosAdapter
+
+    companion object {
+        const val URL = "https://superheroapi.com/"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +52,10 @@ class SuperHerosListActivity : AppCompatActivity() {
             override fun onQueryTextChange(newText: String?) = false
         })
 
-        adapter = SuperherosAdapter()
+        //  TODO, elimina las imagenes cuando roto el dispositivo.
+        adapter =
+            SuperherosAdapter() { navigateToDetail(it) }  // aqui le estoy pasando el metodo sin el id que aún no tengo
+
         binding.rvSuperhero.setHasFixedSize(true)
         binding.rvSuperhero.layoutManager = LinearLayoutManager(this)
         binding.rvSuperhero.adapter = adapter
@@ -66,7 +75,8 @@ class SuperHerosListActivity : AppCompatActivity() {
 
                 if (response?.superheros != null) {
 
-                    runOnUiThread { updateSuperherosList(response.superheros)
+                    runOnUiThread {
+                        updateSuperherosList(response.superheros)
                         binding.progressBar.isVisible = false
                     }
 
@@ -78,9 +88,7 @@ class SuperHerosListActivity : AppCompatActivity() {
 
                             listOf(
                                 Superhero(
-                                    "1",
-                                    "Sin datos",
-                                    SuperheroImageResponse("")
+                                    "1", "Sin datos", SuperheroImageResponse("")
                                 )
                             )
                         )
@@ -97,14 +105,19 @@ class SuperHerosListActivity : AppCompatActivity() {
 
     }
 
-
     private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("https://superheroapi.com/api/") //no olvidar ultimo slash
+        return Retrofit.Builder().baseUrl(URL) //no olvidar ultimo slash
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
     private fun updateSuperherosList(list: List<Superhero>) {
 //        Log.i("SEMILLA", "mando a actualizar: ${list.toString()}")
         adapter.updateList(list)
+    }
+
+    private fun navigateToDetail(id: String) {
+        val intent = Intent(this, DetailSuperheroActivity::class.java)
+        intent.putExtra(EXTRA_ID, id)
+        startActivity(intent)
     }
 }
