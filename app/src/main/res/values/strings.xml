@@ -2,7 +2,7 @@
     <string name="app_name">MyTraining</string>
     <string name="IMCApp">IMC-Calculator APP</string>
     <string name="OtherApp">Otra App</string>
-    <string name="findBar">Buscar....</string>
+
     <!--IMC_APP-->
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
@@ -41,11 +41,20 @@
 
     <!--SUPERHERO_APP-->
     <string name="superherosApp">Superheroes APP</string>
+    <string name="super_searchBar">Search superhero.... (english)</string>
     <string name="super_intelligence">Intelligence</string>
     <string name="super_strength">Strength</string>
     <string name="super_speed">Speed</string>
     <string name="super_durability">Durability</string>
     <string name="super_power">Power</string>
     <string name="super_combat">Combat</string>
+    <string name="super_publisher">Publisher:</string>
+    <string name="super_first_appearance">First appearance:</string>
+    <string name="super_btn_back">Back</string>
+    <string name="super_help">"Write a part of or all superhero's name."</string>
+
+    <!--Settings_APP-->
+    <string name="settingssApp">Settings</string>
+
 
 </resources>

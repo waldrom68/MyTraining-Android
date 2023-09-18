@@ -7,6 +7,24 @@
     tools:context=".superheros_app.DetailSuperheroActivity">
 
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:contentDescription="volver"
+        android:src="@android:drawable/ic_media_previous"
+        app:backgroundTint="@color/todo_accent"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pressedTranslationZ="12dp"
+        app:tint="@color/white" />
+
     <ImageView
         android:id="@+id/ivSuperhero"
         android:layout_width="match_parent"
@@ -22,7 +40,6 @@
         android:layout_height="0dp"
         android:layout_marginTop="220dp"
         android:layout_marginBottom="-42dp"
-        android:elevation="8dp"
         app:cardBackgroundColor="@color/superhero_item_name"
         app:cardCornerRadius="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,9 +58,10 @@
                 android:id="@+id/tvSuperheroName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
                 android:gravity="center"
                 android:textAllCaps="true"
-                android:textColor="@android:color/white"
+                android:textColor="@color/superhero_label"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 tools:text="tvSuperheroName" />
@@ -54,26 +72,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="tvSuperheroRealName"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/tvPublisher"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="tvPublisher"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textStyle="italic|bold"
+                tools:text="tvSuperheroRealName" />
 
             <!--Barras-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="4dp"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
@@ -83,7 +92,8 @@
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
-                    android:background="@color/teal_200" />
+                    android:background="@color/superhero_bars"
+                    tools:layout_height="60dp" />
 
                 <View
                     android:id="@+id/viewStrength"
@@ -91,7 +101,8 @@
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
-                    android:background="@color/teal_200" />
+                    android:background="@color/superhero_bars"
+                    tools:layout_height="40dp" />
 
                 <View
                     android:id="@+id/viewSpeed"
@@ -99,7 +110,8 @@
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
-                    android:background="@color/teal_200" />
+                    android:background="@color/superhero_bars"
+                    tools:layout_height="80dp" />
 
                 <View
                     android:id="@+id/viewDurability"
@@ -107,7 +119,8 @@
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
-                    android:background="@color/teal_200" />
+                    android:background="@color/superhero_bars"
+                    tools:layout_height="20dp" />
 
                 <View
                     android:id="@+id/viewPower"
@@ -115,7 +128,8 @@
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
-                    android:background="@color/teal_200" />
+                    android:background="@color/superhero_bars"
+                    tools:layout_height="10dp" />
 
                 <View
                     android:id="@+id/viewCombat"
@@ -123,13 +137,15 @@
                     android:layout_height="0dp"
                     android:layout_marginHorizontal="4dp"
                     android:layout_weight="1"
-                    android:background="@color/teal_200" />
+                    android:background="@color/superhero_bars"
+                    tools:layout_height="100dp" />
 
 
             </LinearLayout>
 
             <!--Etiquetas-->
             <LinearLayout
+                android:id="@+id/powersStatsLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -140,7 +156,7 @@
 
                 <TextView
                     android:id="@+id/tvIntelligence"
-                    style="@style/text_power_stats"
+                    style="@style/super_text_power_stats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -148,7 +164,7 @@
 
                 <TextView
                     android:id="@+id/tvStrength"
-                    style="@style/text_power_stats"
+                    style="@style/super_text_power_stats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -156,7 +172,7 @@
 
                 <TextView
                     android:id="@+id/tvSpeed"
-                    style="@style/text_power_stats"
+                    style="@style/super_text_power_stats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -164,7 +180,7 @@
 
                 <TextView
                     android:id="@+id/tvDurability"
-                    style="@style/text_power_stats"
+                    style="@style/super_text_power_stats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -172,7 +188,7 @@
 
                 <TextView
                     android:id="@+id/tvPower"
-                    style="@style/text_power_stats"
+                    style="@style/super_text_power_stats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -180,7 +196,7 @@
 
                 <TextView
                     android:id="@+id/tvCombat"
-                    style="@style/text_power_stats"
+                    style="@style/super_text_power_stats"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -188,9 +204,71 @@
 
             </LinearLayout>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="42dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="60dp"
+                app:cardBackgroundColor="@color/superhero_background_component"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="8dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="@string/super_publisher"
+                        android:textColor="@color/superhero_title_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvPublisher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        tools:text="tvPublisher" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/super_first_appearance"
+                        android:textColor="@color/superhero_title_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvFirstAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        tools:text="tvFirstAppearance" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

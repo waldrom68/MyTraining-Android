@@ -11,10 +11,8 @@
     <color name="background_component">#CC1B1C32</color>
     <color name="background_component_select">#0A0B19</color>
     <color name="background_button">@color/purple_500</color>
-    <color name="background_button_select">@color/purple_700</color>
-    <color name="_error">#BF360C</color>
 
-<!--IMC_APP-->
+    <!--IMC_APP-->
     <color name="healthy">#004D40</color>
     <color name="moderate">#00E676</color>
     <color name="severe">#FF7043</color>
@@ -23,11 +21,10 @@
 
 <!--TODO_APP-->
     <!--El estilo se cambia en archivo res/themes-->
+    <color name="todo_title_text">#F0CDC9C9</color>
     <color name="todo_background_app">#FF204993</color>
     <color name="todo_background_card">#FF081A4A</color>
     <color name="todo_background_card_disable">#787878</color>
-    <color name="todo_background_component_select">#FF204993</color>
-    <color name="todo_subtitle_text">#959595</color>
     <color name="todo_accent">#E91E63</color>
 
     <color name="todo_business_category">#FF9800</color>
@@ -37,6 +34,11 @@
 
 <!--Superheros_APP-->
     <color name="superhero_item_name">#B37C4DFF</color>  // with transparency
+    <color name="superhero_background_app">#C5CAE9</color>
+    <color  name="superhero_label">#FFD600</color>
+    <color  name="superhero_bars">#0A0B19</color>
+    <color name="superhero_background_component">#1B1C32</color>
+    <color name="superhero_title_text">#CDC9C9</color>
 
 
 </resources>

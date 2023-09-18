@@ -15,11 +15,15 @@
         android:theme="@style/Theme.MyTraining"
         tools:targetApi="31">
         <activity
+            android:name=".settings.SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".superheros_app.DetailSuperheroActivity"
             android:exported="false" />
         <activity
             android:name=".superheros_app.SuperHerosListActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SuperApp" />
         <activity
             android:name=".todo_app.TodoMainActivity"
             android:exported="false"

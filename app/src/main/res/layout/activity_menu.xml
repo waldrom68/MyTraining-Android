@@ -28,11 +28,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/superherosApp" />
+
+
     <Button
-        android:id="@+id/btnOther"
+        android:id="@+id/btnSettingsApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/OtherApp" />
+        android:text="@string/settingssApp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

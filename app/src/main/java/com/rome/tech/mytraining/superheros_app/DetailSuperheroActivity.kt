@@ -70,7 +70,14 @@ class DetailSuperheroActivity : AppCompatActivity() {
             .into(binding.ivSuperhero)
 
         binding.tvSuperheroName.text = superhero.name
+        binding.tvSuperheroRealName.text = superhero.biography.realName
+        binding.tvPublisher.text = superhero.biography.publisher
+        binding.tvFirstAppearance.text = superhero.biography.firstAppearance
+
+
         powerStats(superhero.powerstats)
+
+        binding.btnBack.setOnClickListener{ onBackPressed() }
 
     }
 

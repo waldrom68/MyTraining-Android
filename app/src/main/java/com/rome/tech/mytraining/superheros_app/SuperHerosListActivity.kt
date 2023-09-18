@@ -46,6 +46,7 @@ class SuperHerosListActivity : AppCompatActivity() {
         binding.herosSearchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchByName(query.orEmpty())
+
                 return false
             }
 
@@ -77,7 +78,9 @@ class SuperHerosListActivity : AppCompatActivity() {
 
                     runOnUiThread {
                         updateSuperherosList(response.superheros)
-                        binding.progressBar.isVisible = false
+                        binding.progressBar.isVisible = false;
+                        binding.superHelp.isVisible = false;
+
                     }
 
                 } else {
@@ -93,11 +96,15 @@ class SuperHerosListActivity : AppCompatActivity() {
                             )
                         )
                         binding.progressBar.isVisible = false
+                        binding.superHelp.isVisible = false;
                     }
                 }
             } else {
                 Log.i("SEMILLA searchByName", "error en la conexion al servidor")
-                runOnUiThread { binding.progressBar.isVisible = false }
+                runOnUiThread {
+                    binding.progressBar.isVisible = false
+                    binding.superHelp.isVisible = false;
+                }
             }
 
         }
