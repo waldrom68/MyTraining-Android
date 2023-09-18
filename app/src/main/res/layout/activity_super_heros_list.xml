@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".superheros_app.SuperHerosListActivity">
 
     <ProgressBar
@@ -20,19 +21,46 @@
         android:id="@+id/herosSearchBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:defaultQueryHint="@string/findBar"
+        app:defaultQueryHint="@string/super_searchBar"
         app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSuperhero"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/superhero_background_app"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/herosSearchBar" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/super_help"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32sp"
+        app:cardCornerRadius="16dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/superhero_background_component"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/super_help"
+            android:textColor="@color/title_text"
+            android:textSize="22sp" />
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

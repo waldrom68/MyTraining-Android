@@ -2,19 +2,19 @@ package com.rome.tech.mytraining
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.rome.tech.mytraining.IMCapp.ImcMainActivity
+import com.rome.tech.mytraining.settings.SettingsActivity
 import com.rome.tech.mytraining.superheros_app.SuperHerosListActivity
 import com.rome.tech.mytraining.todo_app.TodoMainActivity
 
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var btnIMCApp: Button
-    private lateinit var btnOtherApp: Button
     private lateinit var btnTodoApp: Button
     private lateinit var btnSuperherosApp: Button
+    private lateinit var btnSettingsApp: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +29,9 @@ class MenuActivity : AppCompatActivity() {
 
     private fun initElements() {
         btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
-        btnTodoApp =  findViewById<Button>(R.id.btnTODO)
+        btnTodoApp = findViewById<Button>(R.id.btnTODO)
         btnSuperherosApp = findViewById<Button>(R.id.btnSuperherosApp)
-        btnOtherApp = findViewById<Button>(R.id.btnOther)
+        btnSettingsApp = findViewById<Button>(R.id.btnSettingsApp)
 
     }
 
@@ -39,10 +39,9 @@ class MenuActivity : AppCompatActivity() {
         btnIMCApp.setOnClickListener { navigateToIMCApp() }
         btnTodoApp.setOnClickListener { navigateToTODOApp() }
         btnSuperherosApp.setOnClickListener { navigateToSUPERHEROSApp() }
-        btnOtherApp.setOnClickListener { Log.i("wal", "Click en btnOtherApp") }
+        btnSettingsApp.setOnClickListener { navigateToSettingsApp() }
 
     }
-
 
 //    private fun initUI() {
 //        TODO("Not yet implemented")
@@ -60,6 +59,11 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navigateToSUPERHEROSApp() {
         var intent = Intent(this, SuperHerosListActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToSettingsApp() {
+        var intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
 }

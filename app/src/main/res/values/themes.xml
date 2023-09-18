@@ -19,11 +19,11 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/todo_background_app</item>
@@ -34,6 +34,16 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">"@color/todo_subtitle_text"</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:layout_marginHorizontal">32dp</item>
     </style>
+
+    <style name="Theme.SuperApp" parent="Theme.MaterialComponents.DayNight.NoActionBar"></style>
+
+    <!--sUPERHERO APP-->
+    <style name="super_text_power_stats">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
 </resources>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,8 +15,15 @@
         android:theme="@style/Theme.MyTraining"
         tools:targetApi="31">
         <activity
-            android:name=".superheros_app.SuperHerosListActivity"
+            android:name=".settings.SettingsActivity"
             android:exported="false" />
+        <activity
+            android:name=".superheros_app.DetailSuperheroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".superheros_app.SuperHerosListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SuperApp" />
         <activity
             android:name=".todo_app.TodoMainActivity"
             android:exported="false"
