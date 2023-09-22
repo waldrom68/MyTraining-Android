@@ -64,19 +64,19 @@
     <color name="md_theme_dark_scrim">#000000</color>
 
     <!--IMC_APP-->
-    <color name="healthy">#004D40</color>
-    <color name="moderate">#00E676</color>
+    <color name="healthy">#00C853</color>
+    <color name="moderate">#A8F7D0</color>
     <color name="severe">#FF7043</color>
     <color name="very_severe">#BF360C</color>
-    <color name="colorPrimaryContainerSelected">@color/md_theme_light_surfaceVariant</color>
-    <color name="colorPrimaryContainerUnSelected">@color/md_theme_light_primaryContainer</color>
+    <color name="colorPrimaryContainerSelected">@color/md_theme_dark_onPrimary</color>
+    <color name="colorPrimaryContainerUnSelected">@color/md_theme_dark_primaryContainer</color>
 
     <!--TODO_APP-->
     <!--El estilo se cambia en archivo res/themes-->
-    <color name="todo_background_app">@color/md_theme_light_primary</color>
-    <color name="todo_background_card_enable">@color/md_theme_dark_onPrimary</color>
-    <color name="todo_text_on_card">@color/md_theme_light_background</color>
-    <color name="todo_background_card_disable">@color/md_theme_dark_primaryContainer</color>
+    <color name="todo_background_app">@color/md_theme_dark_onPrimary</color>
+    <color name="todo_background_card_enable">@color/md_theme_light_onPrimaryContainer</color>
+    <color name="todo_text_on_card">@color/md_theme_dark_onBackground</color>
+    <color name="todo_background_card_disable">@color/md_theme_dark_inversePrimary</color>
     <color name="todo_background_task">@color/md_theme_dark_primaryContainer</color>
 
     <color name="todo_business_category">#FF9800</color>
@@ -95,4 +95,3 @@
 
 
 </resources>
-

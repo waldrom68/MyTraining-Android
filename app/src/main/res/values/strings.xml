@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">MyTraining</string>
-    <string name="IMCApp">IMC-Calculator APP</string>
+    <string name="IMCApp">Masa coporal (IMC)</string>
+    <string name="TODOApp">Lista de tareas</string>
+    <string name="superherosApp">Consultar superheroes</string>
     <string name="OtherApp">Otra App</string>
+
 
     <!--IMC_APP-->
     <string name="male">Hombre</string>
@@ -28,8 +31,8 @@
     <string name="_ErrorIMC">Hubo un error en el cálculo</string>
 
     <!--TODO_APP-->
-    <string name="TODOApp">TODO app</string>
-    <string name="todoTitle">Holita</string>
+
+    <string name="todoTitle">Tareas pendientes</string>
     <string name="todoCategories">Categories</string>
     <string name="todoList">Tareas</string>
     <string name="todo_add_task">Añade una tarea</string>
@@ -40,7 +43,7 @@
     <string name="todo_new_task">Nueva tarea</string>
 
     <!--SUPERHERO_APP-->
-    <string name="superherosApp">Superheroes APP</string>
+
     <string name="super_searchBar">Search superhero.... (english)</string>
     <string name="super_intelligence">Intelligence</string>
     <string name="super_strength">Strength</string>
@@ -54,7 +57,7 @@
     <string name="super_help">"Write a part of or all superhero's name."</string>
 
     <!--Settings_APP-->
-    <string name="settingssApp">Settings</string>
+    <string name="settingssApp">Configuración</string>
 
 
 </resources>

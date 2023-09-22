@@ -1,40 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    android:orientation="vertical"
+
+    android:background="?colorPrimaryContainer"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MenuActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSettingsApp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        android:backgroundTint="?colorSecondaryVariant"
+        android:elevation="8dp"
+        android:text="@string/settingssApp"
+        android:textColor="?colorOnTertiary"
+        android:textSize="18sp"
+        app:cornerRadius="10dp" />
 
     <Button
         android:id="@+id/btnIMCApp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/IMCApp" />
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        android:backgroundTint="?colorSecondaryVariant"
+        android:elevation="8dp"
+        android:text="@string/IMCApp"
+        android:textColor="?colorOnTertiary"
+        android:textSize="18sp"
+        app:cornerRadius="10dp" />
 
     <Button
         android:id="@+id/btnTODO"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/TODOApp" />
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        android:backgroundTint="?colorSecondaryVariant"
+        android:elevation="8dp"
+        android:text="@string/TODOApp"
+        android:textColor="?colorOnTertiary"
+        android:textSize="18sp"
+        app:cornerRadius="10dp" />
 
     <Button
         android:id="@+id/btnSuperherosApp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/superherosApp" />
-
-
-    <Button
-        android:id="@+id/btnSettingsApp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/settingssApp" />
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        android:backgroundTint="?colorSecondaryVariant"
+        android:elevation="8dp"
+        android:text="@string/superherosApp"
+        android:textColor="?colorOnTertiary"
+        android:textSize="18sp"
+        app:cornerRadius="10dp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -4,41 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-
     android:padding="16sp"
     tools:context=".IMCapp.ResultIMCActivity">
 
-    <TextView
-        android:id="@+id/imcLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16sp"
-        android:shadowColor="@color/design_default_color_primary"
-        android:shadowDx="@integer/material_motion_duration_long_2"
-        android:text="@string/resultado_obtenido"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="42sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardResult"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-
-        android:padding="16dp"
-        app:cardBackgroundColor="@color/title_text"
+        app:cardBackgroundColor="?colorPrimaryContainer"
         app:cardCornerRadius="16dp"
-        app:layout_constraintBottom_toTopOf="@id/btnReCalculate"
+        app:cardElevation="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReCalculate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imcLabel">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -47,21 +31,36 @@
             android:paddingVertical="32sp">
 
             <TextView
+                android:id="@+id/imcLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:text="@string/resultado_obtenido"
+                android:textAllCaps="true"
+                android:textSize="42sp" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                app:dividerColor="?colorTertiary" />
+
+            <TextView
                 android:id="@+id/imcResultStr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@color/purple_700"
+                android:layout_marginTop="42dp"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:text="Estás bien gordito" />
+
 
             <TextView
                 android:id="@+id/imcResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@color/purple_700"
                 android:textSize="56sp"
                 android:textStyle="bold"
                 tools:text="22.5" />
@@ -74,14 +73,14 @@
         android:id="@+id/btnReCalculate"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_margin="16dp"
+        android:backgroundTint="?colorTertiary"
         android:text="@string/reCalculate"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/background_button"
+        android:textColor="?colorOnTertiary"
+        android:textSize="32sp"
+        app:elevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardResult"
-        app:tint="@color/white" />
+        app:layout_constraintTop_toBottomOf="@id/cardResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

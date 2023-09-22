@@ -14,7 +14,6 @@
         android:layout_margin="10dp"
         android:contentDescription="volver"
         android:src="@android:drawable/ic_media_previous"
-        app:backgroundTint="@color/todo_accent"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +22,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:pressedTranslationZ="12dp"
-        app:tint="@color/white" />
+/>
+<!--    app:tint para el svg -->
+<!--    androif:backgrounTint para el elemento -->
+<!--    app:cardBackgroundColor= para las cards-->
 
     <ImageView
         android:id="@+id/ivSuperhero"
@@ -61,7 +63,6 @@
                 android:layout_marginBottom="4dp"
                 android:gravity="center"
                 android:textAllCaps="true"
-                android:textColor="@color/superhero_label"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 tools:text="tvSuperheroName" />
@@ -72,7 +73,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="italic|bold"
                 tools:text="tvSuperheroRealName" />
@@ -211,7 +211,6 @@
                 android:layout_marginHorizontal="42dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="60dp"
-                app:cardBackgroundColor="@color/superhero_background_component"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
 
@@ -229,7 +228,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
                         android:text="@string/super_publisher"
-                        android:textColor="@color/superhero_title_text"
+
                         android:textSize="16sp" />
 
                     <TextView
@@ -238,7 +237,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginBottom="8dp"
-                        android:textColor="@color/white"
                         android:textSize="18sp"
                         tools:text="tvPublisher" />
 
@@ -248,7 +246,6 @@
                         android:layout_gravity="start"
                         android:layout_marginBottom="8dp"
                         android:text="@string/super_first_appearance"
-                        android:textColor="@color/superhero_title_text"
                         android:textSize="16sp" />
 
                     <TextView
@@ -256,8 +253,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-
-                        android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="tvFirstAppearance" />
 

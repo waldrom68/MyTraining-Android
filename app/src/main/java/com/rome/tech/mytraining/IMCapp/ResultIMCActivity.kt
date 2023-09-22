@@ -88,7 +88,7 @@ class ResultIMCActivity : AppCompatActivity() {
             else -> {
                 imcStatus = getString(R.string._ErrorIMC)
                 colorFont =
-                    ContextCompat.getColor(this, com.google.android.material.R.color.design_error)
+                    ContextCompat.getColor(this, com.google.android.material.R.color.design_default_color_error)
             }
 
         }
