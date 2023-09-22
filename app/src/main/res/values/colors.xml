@@ -64,6 +64,7 @@
     <color name="md_theme_dark_scrim">#000000</color>
 
     <!--IMC_APP-->
+    <color name="imc_background_app">@color/md_theme_light_surface</color>
     <color name="healthy">#004D40</color>
     <color name="moderate">#00E676</color>
     <color name="severe">#FF7043</color>
@@ -86,6 +87,7 @@
 
     <!--Superheros_APP-->
     <color name="superhero_item_name">#B37C4DFF</color>
+    <color name="superhero_text_on_card">@color/md_theme_light_onPrimary</color>
     // with transparency
     <!--    <color name="superhero_background_app">#C5CAE9</color>-->
     <!--    <color name="superhero_label">#FFD600</color>-->

@@ -36,14 +36,14 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "se
 // CONSTANTES con las claves para la persistencia de datos.
 class SettingsActivity : AppCompatActivity() {
     companion object {
+        const val KEY_DARK_MODE = "key_dark_mode"
+        const val KEY_WIFI = "key_wifi"
         const val KEY_VOLUME_LVL = "key_volume_lvl"
         const val KEY_VIBRATION = "key_vibration"
-        const val KEY_WIFI = "key_wifi"
-        const val KEY_DARK_MODE = "key_dark_mode"
     }
 
     private lateinit var binding: ActivitySettingsBinding
-    private var wifiManager: WifiManager? = null
+    private lateinit var wifiManager: WifiManager
 
 
     // bandera para manejar excepcionalmente el Flow
@@ -51,6 +51,8 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        var wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -70,10 +72,10 @@ class SettingsActivity : AppCompatActivity() {
 
                     if (settings != null) {
                         runOnUiThread {
-                            binding.rgVolume.setValues(settings.volume.toFloat())
                             binding.swDarkMode.isChecked = settings.darkMode
-                            binding.swVibration.isChecked = settings.vibration
                             binding.swWifi.isChecked = settings.wifi
+                            binding.swVibration.isChecked = settings.vibration
+                            binding.rgVolume.setValues(settings.volume.toFloat())
                             isFirstRender = false
                         }
                     }
@@ -81,33 +83,10 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        notifyDialog()
 
     }
 
     private fun initListeners() {
-        binding.rgVolume.addOnChangeListener { _, value, _ ->
-            CoroutineScope(Dispatchers.IO).launch {
-                saveRangesSlides(KEY_VOLUME_LVL, value.toInt())
-            }
-        }
-
-        binding.swWifi.setOnCheckedChangeListener { _, b ->
-            CoroutineScope(Dispatchers.IO).launch {
-                saveSwitches(KEY_WIFI, b)
-                runOnUiThread {
-                    navigateToSettingControls("Wifi")
-                }
-
-            }
-        }
-
-        binding.swVibration.setOnCheckedChangeListener { _, b ->
-            CoroutineScope(Dispatchers.IO).launch {
-                saveSwitches(KEY_VIBRATION, b)
-            }
-        }
-
         binding.swDarkMode.setOnCheckedChangeListener { _, dark ->
             CoroutineScope(Dispatchers.IO).launch {
                 saveSwitches(KEY_DARK_MODE, dark)
@@ -121,6 +100,29 @@ class SettingsActivity : AppCompatActivity() {
                 }
             }
         }
+
+        binding.swWifi.setOnCheckedChangeListener { _, b ->
+            CoroutineScope(Dispatchers.IO).launch {
+                saveSwitches(KEY_WIFI, b)
+                runOnUiThread {
+                    navigateToSettingControls("Wifi")
+                }
+            }
+        }
+
+        binding.rgVolume.addOnChangeListener { _, value, _ ->
+            CoroutineScope(Dispatchers.IO).launch {
+                saveRangesSlides(KEY_VOLUME_LVL, value.toInt())
+            }
+        }
+
+        binding.swVibration.setOnCheckedChangeListener { _, b ->
+            CoroutineScope(Dispatchers.IO).launch {
+                saveSwitches(KEY_VIBRATION, b)
+            }
+        }
+
+
     }
 
     private suspend fun saveSwitches(key: String, value: Boolean) {
@@ -149,7 +151,8 @@ class SettingsActivity : AppCompatActivity() {
 
 
     fun isDarkTheme(activity: Activity): Boolean {
-        return (activity.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+        return (activity.resources.configuration.uiMode
+                and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
     }
 
     private fun enableDarkMode() {
@@ -164,7 +167,6 @@ class SettingsActivity : AppCompatActivity() {
 
 
     private fun isWiFiEnabled(): Boolean {
-        val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
         return wifiManager.isWifiEnabled
     }
 
@@ -187,17 +189,18 @@ class SettingsActivity : AppCompatActivity() {
             .setNegativeButton("No", dialogClickListener).show()
     }
 
-    private fun notifyDialog() {
-        val dialogClickListener = DialogInterface.OnClickListener { dialog, which ->
-            when (which) {
-                DialogInterface.BUTTON_POSITIVE -> {
-                }
-            }
-        }
+//    private fun notifyDialog() {
+//        val dialogClickListener = DialogInterface.OnClickListener { dialog, which ->
+//            when (which) {
+//                DialogInterface.BUTTON_POSITIVE -> {
+//                }
+//            }
+//        }
+//
+//        var builder: AlertDialog.Builder = AlertDialog.Builder(this) as AlertDialog.Builder
+//        builder.setMessage("IMPORTANTE: Solo tienen funcionalidad el DarkMode y la WIFI")
+//            .setNegativeButton("Ok", dialogClickListener).show()
+//    }
 
-        var builder: AlertDialog.Builder = AlertDialog.Builder(this) as AlertDialog.Builder
-        builder.setMessage("IMPORTANTE: Solo tienen funcionalidad el DarkMode y la WIFI")
-            .setNegativeButton("Ok", dialogClickListener).show()
-    }
 }
 

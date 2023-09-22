@@ -1,5 +1,5 @@
 <resources>
-
+    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
@@ -30,20 +30,14 @@
     </style>
 
 
-    <!-- Base application theme. -->
-    <style name="Theme.MyTraining" parent="AppTheme">
-        <!--        &lt;!&ndash; Primary brand color. &ndash;&gt;-->
-        <!--        <item name="colorPrimary">@color/purple_200</item>-->
-        <!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
-        <!--        <item name="colorOnPrimary">@color/black</item>-->
-        <!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
-        <!--        <item name="colorSecondary">@color/teal_200</item>-->
-        <!--        <item name="colorSecondaryVariant">@color/teal_200</item>-->
-        <!--        <item name="colorOnSecondary">@color/black</item>-->
 
-        <!-- Status bar color. -->
+    <style name="Theme.MyTraining" parent="AppTheme">
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="Theme.Imc" parent="AppTheme">
+        <item name="android:statusBarColor">?attr/colorSurface</item>
     </style>
 
     <style name="Theme.TodoApp" parent="AppTheme">

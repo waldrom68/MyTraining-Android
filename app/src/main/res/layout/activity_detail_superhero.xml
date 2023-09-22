@@ -11,21 +11,22 @@
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="?colorSecondary"
         android:contentDescription="volver"
         android:src="@android:drawable/ic_media_previous"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="1"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
         app:pressedTranslationZ="12dp"
-/>
-<!--    app:tint para el svg -->
-<!--    androif:backgrounTint para el elemento -->
-<!--    app:cardBackgroundColor= para las cards-->
+        app:tint="?colorOnSecondary" />
+    <!--    app:tint para el svg -->
+    <!--    android:backgrounTint para el elemento -->
+    <!--    app:cardBackgroundColor= para las cards-->
 
     <ImageView
         android:id="@+id/ivSuperhero"
@@ -42,7 +43,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="220dp"
         android:layout_marginBottom="-42dp"
-        app:cardBackgroundColor="@color/superhero_item_name"
+
         app:cardCornerRadius="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +54,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/superhero_item_name"
             android:orientation="vertical">
 
 
@@ -63,6 +65,7 @@
                 android:layout_marginBottom="4dp"
                 android:gravity="center"
                 android:textAllCaps="true"
+                android:textColor="@color/superhero_text_on_card"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 tools:text="tvSuperheroName" />
@@ -73,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textColor="@color/superhero_text_on_card"
                 android:textSize="18sp"
                 android:textStyle="italic|bold"
                 tools:text="tvSuperheroRealName" />
@@ -160,7 +164,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/super_intelligence" />
+                    android:text="@string/super_intelligence"
+                    android:textColor="@color/superhero_text_on_card" />
 
                 <TextView
                     android:id="@+id/tvStrength"
@@ -168,7 +173,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/super_strength" />
+                    android:text="@string/super_strength"
+                    android:textColor="@color/superhero_text_on_card" />
 
                 <TextView
                     android:id="@+id/tvSpeed"
@@ -176,7 +182,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/super_speed" />
+                    android:text="@string/super_speed"
+                    android:textColor="@color/superhero_text_on_card" />
 
                 <TextView
                     android:id="@+id/tvDurability"
@@ -184,7 +191,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/super_durability" />
+                    android:text="@string/super_durability"
+                    android:textColor="@color/superhero_text_on_card" />
 
                 <TextView
                     android:id="@+id/tvPower"
@@ -192,7 +200,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/super_power" />
+                    android:text="@string/super_power"
+                    android:textColor="@color/superhero_text_on_card" />
 
                 <TextView
                     android:id="@+id/tvCombat"
@@ -200,7 +209,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/super_combat" />
+                    android:text="@string/super_combat"
+                    android:textColor="@color/superhero_text_on_card" />
 
             </LinearLayout>
 

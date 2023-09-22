@@ -42,7 +42,22 @@
         <!--        <item name="colorOnSecondary">@color/black</item>-->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Imc" parent="AppTheme">
+        <!--        &lt;!&ndash; Primary brand color. &ndash;&gt;-->
+        <!--        <item name="colorPrimary">@color/purple_500</item>-->
+        <!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+        <!--        <item name="colorOnPrimary">@color/white</item>-->
+        <!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+        <!--        <item name="colorSecondary">@color/teal_200</item>-->
+        <!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
+        <!--        <item name="colorOnSecondary">@color/black</item>-->
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
         <!-- Customize your theme here. -->
     </style>
 

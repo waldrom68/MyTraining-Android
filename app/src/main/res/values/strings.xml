@@ -58,6 +58,13 @@
 
     <!--Settings_APP-->
     <string name="settingssApp">Configuración</string>
+    <string name="setting_modo_oscuro">Modo oscuro</string>
+    <string name="descripcion_del_modo">Descripcion del modo</string>
+    <string name="setting_wifi">WIFI</string>
+    <string name="activa_wifisetting_">Activa o desactiva acceso a WIFI</string>
+    <string name="setting_ajustes_sonido">Ajustes del nivel de sonido (sólo ejemplo)</string>
+    <string name="setting_advertencia">IMPORTANTE: Solo tienen funcionalidad el DarkMode y la WIFI</string>
+    <string name="setting_vibration">Vibrar en las llamadas (sin funcionalidad</string>
 
 
 </resources>
