@@ -31,7 +31,7 @@
     <ImageView
         android:id="@+id/ivSuperhero"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="260dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,33 +43,31 @@
         android:layout_height="0dp"
         android:layout_marginTop="220dp"
         android:layout_marginBottom="-42dp"
-
+        app:cardBackgroundColor="@color/superhero_item_name"
         app:cardCornerRadius="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/tvSuperheroName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:paddingVertical="6dp"
+            android:textColor="@color/superhero_text_on_card"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="tvSuperheroName" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/superhero_item_name"
+            android:layout_marginTop="42dp"
+            android:background="@color/superhero_item"
             android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/tvSuperheroName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:textColor="@color/superhero_text_on_card"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                tools:text="tvSuperheroName" />
-
 
             <TextView
                 android:id="@+id/tvSuperheroRealName"
@@ -217,6 +215,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="42dp"
                 android:layout_marginTop="8dp"
