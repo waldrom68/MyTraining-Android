@@ -87,6 +87,7 @@
 
     <!--Superheros_APP-->
     <color name="superhero_item_name">#B37C4DFF</color>
+    <color name="superhero_item">#7C4DFF</color>
     <color name="superhero_text_on_card">@color/md_theme_light_onPrimary</color>
     // with transparency
     <!--    <color name="superhero_background_app">#C5CAE9</color>-->

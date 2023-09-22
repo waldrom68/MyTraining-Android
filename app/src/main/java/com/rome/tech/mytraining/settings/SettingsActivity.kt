@@ -43,8 +43,9 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivitySettingsBinding
-    private lateinit var wifiManager: WifiManager
 
+//    private lateinit var wifiManager: WifiManager
+    
 
     // bandera para manejar excepcionalmente el Flow
     private var isFirstRender: Boolean = true
@@ -52,11 +53,11 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        
+       
         initUI()
         initListeners()
 
@@ -144,7 +145,7 @@ class SettingsActivity : AppCompatActivity() {
                 volume = preferences[intPreferencesKey(KEY_VOLUME_LVL)] ?: 30,
                 darkMode = preferences[booleanPreferencesKey(KEY_DARK_MODE)] ?: isDarkTheme(this),
                 vibration = preferences[booleanPreferencesKey(KEY_VIBRATION)] ?: true,
-                wifi = preferences[booleanPreferencesKey(KEY_WIFI)] ?: isWiFiEnabled()
+                wifi = preferences[booleanPreferencesKey(KEY_WIFI)] ?: true
             )
         }
     }
@@ -167,26 +168,30 @@ class SettingsActivity : AppCompatActivity() {
 
 
     private fun isWiFiEnabled(): Boolean {
+        var wifiManager: WifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
         return wifiManager.isWifiEnabled
     }
 
 
     private fun navigateToSettingControls(control: String) {
-        val dialogClickListener = DialogInterface.OnClickListener { dialog, which ->
-            when (which) {
-                DialogInterface.BUTTON_POSITIVE -> {
-                    startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS));
-                }
 
-                DialogInterface.BUTTON_NEGATIVE -> {
+        if (isWiFiEnabled() != binding.swWifi.isChecked) {
+            val dialogClickListener = DialogInterface.OnClickListener { dialog, which ->
+                when (which) {
+                    DialogInterface.BUTTON_POSITIVE -> {
+                        startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS));
+                    }
+
+                    DialogInterface.BUTTON_NEGATIVE -> {
+                    }
                 }
             }
-        }
 
-        var builder: AlertDialog.Builder = AlertDialog.Builder(this) as AlertDialog.Builder
-        builder.setMessage("Do you want to open the $control controls?")
-            .setPositiveButton("Yes", dialogClickListener)
-            .setNegativeButton("No", dialogClickListener).show()
+            var builder: AlertDialog.Builder = AlertDialog.Builder(this) as AlertDialog.Builder
+            builder.setMessage("Do you want to open the $control controls?")
+                .setPositiveButton("Yes", dialogClickListener)
+                .setNegativeButton("No", dialogClickListener).show()
+        }
     }
 
 //    private fun notifyDialog() {

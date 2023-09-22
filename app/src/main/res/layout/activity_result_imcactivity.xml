@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16sp"
+    android:layout_marginVertical="32dp"
     tools:context=".IMCapp.ResultIMCActivity">
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardResult"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
         app:cardBackgroundColor="?colorPrimaryContainer"
         app:cardCornerRadius="16dp"
         app:cardElevation="16dp"
@@ -38,7 +39,7 @@
                 android:layout_marginBottom="16dp"
                 android:text="@string/resultado_obtenido"
                 android:textAllCaps="true"
-                android:textSize="42sp" />
+                android:textSize="30sp" />
 
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="wrap_content"
@@ -71,13 +72,17 @@
 
     <Button
         android:id="@+id/btnReCalculate"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:backgroundTint="?colorTertiary"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="?colorSecondary"
+        android:elevation="16dp"
         android:text="@string/reCalculate"
-        android:textColor="?colorOnTertiary"
-        android:textSize="32sp"
-        app:elevation="16dp"
+        android:textColor="?colorOnSecondary"
+        app:cornerRadius="24dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
