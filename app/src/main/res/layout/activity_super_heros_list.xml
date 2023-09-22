@@ -32,7 +32,6 @@
         android:id="@+id/rvSuperhero"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/superhero_background_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +44,6 @@
         android:layout_margin="32sp"
         app:cardCornerRadius="16dp"
         android:visibility="visible"
-        app:cardBackgroundColor="@color/superhero_background_component"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.1"
@@ -58,7 +56,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@string/super_help"
-            android:textColor="@color/title_text"
             android:textSize="22sp" />
     </androidx.cardview.widget.CardView>
 

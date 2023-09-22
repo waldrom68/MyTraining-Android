@@ -11,6 +11,7 @@ import com.rome.tech.mytraining.todo_app.TodoMainActivity
 
 class MenuActivity : AppCompatActivity() {
 
+//  acceso: "https://superheroapi.com/api/1531095577640835/search/{name}"
     private lateinit var btnIMCApp: Button
     private lateinit var btnTodoApp: Button
     private lateinit var btnSuperherosApp: Button

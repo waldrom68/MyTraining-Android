@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.rome.tech.mytraining"
-        minSdk = 22
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -59,12 +59,13 @@ dependencies {
     // Coroutine
     // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
-//Picasso
+//Picasso -> manejo de imagenes
     implementation("com.squareup.picasso:picasso:2.8")
 
+// Datastore -> persistencia
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
-// API
-// https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+// API -> https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
 // GSON
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")

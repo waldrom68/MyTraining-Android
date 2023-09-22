@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +10,10 @@
     <!--Modo oscuro-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -31,14 +33,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Modo oscuro"
+                android:text="@string/setting_modo_oscuro"
                 android:textStyle="bold"
                 tools:text="Modo oscuro" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descripcion del modo"
+                android:text="@string/descripcion_del_modo"
                 android:textSize="13sp"
                 tools:text="Descripcion del modo" />
 
@@ -50,33 +52,23 @@
             android:layout_height="wrap_content" />
 
 
-        <!--        <com.google.android.material.slider.RangeSlider-->
-        <!--            android:id="@+id/rgHeight"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:stepSize="1"-->
-        <!--            android:value="120.0"-->
-        <!--            android:valueFrom="120"-->
-        <!--            android:valueTo="230">-->
-
-        <!--        </com.google.android.material.slider.RangeSlider>-->
-
     </LinearLayout>
 
     <!--Bluetooth-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="32dp"
         android:layout_marginVertical="16dp"
         android:layout_marginTop="16dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/ic_bluetooth" />
+            android:src="@drawable/ic_wifi_off" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -89,21 +81,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activar Bluetooth"
+                android:text="@string/setting_wifi"
                 android:textStyle="bold"
-                tools:text="Activar Bluetooth" />
+                tools:text="Desactivar WIFI" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Conecta perifericos sin cables"
+                android:text="@string/activa_wifisetting_"
                 android:textSize="13sp"
-                tools:text="Conecta perifericos sin cables" />
+                tools:text="Activa o desactiva acceso a WIFI" />
 
         </LinearLayout>
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/swBluetooth"
+            android:id="@+id/swWifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -129,9 +121,10 @@
     <!--Ajustes de sonido-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="16dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -149,9 +142,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ajustes del nivel de sonido"
+                android:text="@string/setting_ajustes_sonido"
                 android:textStyle="bold"
-                tools:text="Ajustes del nivel de sonido" />
+                tools:text="Ajustes del nivel de sonido (solo ejemplo)" />
 
             <com.google.android.material.slider.RangeSlider
                 android:id="@+id/rgVolume"
@@ -169,8 +162,9 @@
     <!--Vibration-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="32dp"
+        android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -186,9 +180,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_weight="1"
-            android:text="Vibrar en las llamadas"
-            android:textStyle="bold"
-            />
+            android:text="@string/setting_vibration"
+            android:textStyle="bold" />
 
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -202,5 +195,27 @@
         android:layout_height="1dp"
         android:layout_marginVertical="16dp" />
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:layout_weight="6"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingHorizontal="32dp"
+            android:text="@string/setting_advertencia"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -160,9 +160,9 @@ class ImcMainActivity : AppCompatActivity() {
     private fun getBackgroundColor(isSelectedComponent: Boolean): Int {
 
         return if (isSelectedComponent) {
-            ContextCompat.getColor(this, R.color.background_component_select)
+            ContextCompat.getColor(this, R.color.colorPrimaryContainerSelected)
         } else {
-            ContextCompat.getColor(this, R.color.background_component)
+            ContextCompat.getColor(this, R.color.colorPrimaryContainerUnSelected)
         }
 
     }
