@@ -22,7 +22,7 @@
         android:text="@string/settingssApp"
         android:textColor="?colorOnTertiary"
         android:textSize="18sp"
-        app:cornerRadius="10dp" />
+        app:cornerRadius="16dp" />
 
     <Button
         android:id="@+id/btnIMCApp"
@@ -36,7 +36,7 @@
         android:text="@string/IMCApp"
         android:textColor="?colorOnTertiary"
         android:textSize="18sp"
-        app:cornerRadius="10dp" />
+        app:cornerRadius="16dp" />
 
     <Button
         android:id="@+id/btnTODO"
@@ -50,7 +50,7 @@
         android:text="@string/TODOApp"
         android:textColor="?colorOnTertiary"
         android:textSize="18sp"
-        app:cornerRadius="10dp" />
+        app:cornerRadius="16dp" />
 
     <Button
         android:id="@+id/btnSuperherosApp"
@@ -64,6 +64,6 @@
         android:text="@string/superherosApp"
         android:textColor="?colorOnTertiary"
         android:textSize="18sp"
-        app:cornerRadius="10dp" />
+        app:cornerRadius="16dp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

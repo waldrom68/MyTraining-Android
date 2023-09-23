@@ -63,6 +63,9 @@
     <color name="md_theme_dark_outlineVariant">#44464F</color>
     <color name="md_theme_dark_scrim">#000000</color>
 
+    <!--App-->
+    <color name="textOnContainer">@color/md_theme_dark_onPrimary</color>
+
     <!--IMC_APP-->
     <color name="imc_background_app">@color/md_theme_light_surface</color>
     <color name="healthy">#004D40</color>
@@ -86,10 +89,10 @@
     <color name="todo_other_category">#6200EA</color>
 
     <!--Superheros_APP-->
+    <!--with transparency-->
     <color name="superhero_item_name">#B37C4DFF</color>
     <color name="superhero_item">#7C4DFF</color>
     <color name="superhero_text_on_card">@color/md_theme_light_onPrimary</color>
-    // with transparency
     <!--    <color name="superhero_background_app">#C5CAE9</color>-->
     <!--    <color name="superhero_label">#FFD600</color>-->
     <color name="superhero_bars">#0A0B19</color>
